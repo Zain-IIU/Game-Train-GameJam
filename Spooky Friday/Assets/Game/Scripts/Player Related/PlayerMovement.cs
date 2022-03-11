@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -15,12 +16,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool isJoystick;
     [SerializeField] private bool useSkewedInput;
 
-    [SerializeField] private DynamicJoystick joystick;
+    [SerializeField] private FixedJoystick joystick;
     private SpawnManager _spawnManager;
     private bool isDead;
     private void Awake()
     {
-        joystick = GameObject.FindObjectOfType<DynamicJoystick>();
+        joystick = GameObject.FindObjectOfType<FixedJoystick>();
         _spawnManager = SpawnManager.instance;
         isDead = false;
 
@@ -79,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Animate()
     {
-        if (joystick.Horizontal == 0 && joystick.Vertical == 0)
+        if ((joystick.Horizontal == 0 && joystick.Vertical == 0))
             ismove = false;
         else
             ismove = true;
@@ -91,12 +92,15 @@ public class PlayerMovement : MonoBehaviour
     {
         isDead = true;
         animator.SetTrigger(IsDead);
+        rb.isKinematic = true;
+        GetComponent<Collider>().enabled = false;
         StartCoroutine(nameof(SpawnNewPlayer));
     }
 
     IEnumerator SpawnNewPlayer()
     {
         yield return new WaitForSeconds(1.5f);
+        transform.DOScale(Vector3.zero, 0.15f);
         _spawnManager.RespawnPlayer();
     }
 }

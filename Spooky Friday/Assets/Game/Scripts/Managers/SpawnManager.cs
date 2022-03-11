@@ -9,17 +9,17 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     [SerializeField] private Transform respawnPoint;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Material checkPointMaterial;
     [ContextMenu("Player Respawn")]
     public void RespawnPlayer()
     { 
         GameObject player=Instantiate(playerPrefab,respawnPoint.position,quaternion.identity);
     }
 
-    public void UpdateSpawnPoint(Transform newPoint) => respawnPoint = newPoint;
+    public void UpdateSpawnPoint(Transform newPoint)
+    {
+        respawnPoint = newPoint;
+        newPoint.GetChild(0).GetComponent<MeshRenderer>().material = checkPointMaterial;
+    }
 
 }

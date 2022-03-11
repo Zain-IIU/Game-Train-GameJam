@@ -9,6 +9,8 @@ TagManager:
   - joyStick
   - SoulPoint
   - Obstacle
+  - Obstacle_Fire
+  - Obstacle_Pit
   layers:
   - Default
   - TransparentFX

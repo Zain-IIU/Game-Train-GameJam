@@ -60,7 +60,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Fresnel: 0.859
+    - _Fresnel: 0.78
     - _Glossiness: 0.5
     - _GlowPower: 0.563
     - _Invert: 0
