@@ -8,6 +8,7 @@ TagManager:
   - Destroyable
   - joyStick
   - SoulPoint
+  - Obstacle
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float speed = 5;
     [SerializeField] private float turnSpeed = 360;
+    [SerializeField] private Animator animator;
     private Vector3 _input;
 
     [SerializeField] private bool isJoystick;
@@ -16,26 +17,37 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private DynamicJoystick joystick;
     private SpawnManager _spawnManager;
+    private bool isDead;
     private void Awake()
     {
         joystick = GameObject.FindObjectOfType<DynamicJoystick>();
         _spawnManager = SpawnManager.instance;
+        isDead = false;
 
     }
 
     private void Start()
     {
-       // CameraManager.instance.UpdateTarget(this.transform);
+        CameraManager.instance.UpdateTarget(this.transform);
     }
 
     private void Update()
     {
+        if(isDead) return;
+        
         GatherInput(isJoystick);
         Look();
+        Animate();
+        if (Input.GetMouseButtonDown(1) && !isDead)
+        {
+            DestroyPlayer();
+        }
+            
     }
 
     private void FixedUpdate()
     {
+        if(isDead)  return;
         Move();
     }
 
@@ -61,13 +73,30 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(transform.position + transform.forward * _input.normalized.magnitude * speed * Time.deltaTime);
     }
 
-    private void OnDestroy()
+    private bool ismove;
+    private static readonly int Movehash = Animator.StringToHash("Move");
+    private static readonly int IsDead = Animator.StringToHash("isDead");
+
+    private void Animate()
     {
-        _spawnManager.RespawnPlayer();
+        if (joystick.Horizontal == 0 && joystick.Vertical == 0)
+            ismove = false;
+        else
+            ismove = true;
+        
+        animator.SetBool(Movehash,ismove);
     }
     [ContextMenu("Delete Player")]
     public void DestroyPlayer()
     {
-        Destroy(this.gameObject);
+        isDead = true;
+        animator.SetTrigger(IsDead);
+        StartCoroutine(nameof(SpawnNewPlayer));
+    }
+
+    IEnumerator SpawnNewPlayer()
+    {
+        yield return new WaitForSeconds(1.5f);
+        _spawnManager.RespawnPlayer();
     }
 }

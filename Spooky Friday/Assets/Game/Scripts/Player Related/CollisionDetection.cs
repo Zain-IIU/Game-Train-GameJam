@@ -9,5 +9,10 @@ public class CollisionDetection : MonoBehaviour
         {
             SpawnManager.instance.UpdateSpawnPoint(other.transform);
         }
+
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("Player is Dead");
+        }
     }
 }
