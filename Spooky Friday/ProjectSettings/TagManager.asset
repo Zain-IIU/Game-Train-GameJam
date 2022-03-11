@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Trap
   - Destroyable
+  - joyStick
+  - SoulPoint
   layers:
   - Default
   - TransparentFX
