@@ -11,6 +11,8 @@ TagManager:
   - Obstacle
   - Obstacle_Fire
   - Obstacle_Pit
+  - Obstacle_Fog
+  - Arrow
   layers:
   - Default
   - TransparentFX

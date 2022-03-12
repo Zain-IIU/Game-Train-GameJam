@@ -1,59 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UiManager : MonoSingleton<UiManager>
 {
     [SerializeField] GameObject gameTitle;
     [SerializeField] GameObject[] panelLevelComplete;
     [SerializeField] GameObject[] panelFailed;
-   
 
-    public override void Init()
+    [SerializeField] private RectTransform fadeImage;
+    [SerializeField] private float fadeDuration;
+    private void Start()
     {
-        TapText(false);
-      
+        fadeImage.DOScale(Vector2.zero, fadeDuration).SetEase(Ease.InSine);
     }
 
-
-    public void ShowHideLevelFailedUi(bool value)
+    public void EndFade()
     {
-        panelFailed.SetActiveAll(value);
+        fadeImage.DOScale(Vector2.one * 30f, fadeDuration).SetEase(Ease.OutSine).OnComplete(() =>
+        {
+            //Load the next level
+            SceneManager.LoadScene("Testing");
+        });
     }
-    public void ShowHideLevelCompleteUi(bool value)
-    {
-        panelLevelComplete.SetActiveAll(value);
-    }
-    public void TapText(bool isShow)
-    {
-       
-    }
-
-          // Ui Buttons
-    public void PlayButton(GameObject playBtn)
-    {       
-        playBtn.SetActive(false);
-        gameTitle.SetActive(false);
-        GameManager.instance.RestartLevel();
-    }
-
-    public void BtnNextLevel()
-    {
-        ShowHideLevelCompleteUi(false);
-        Init();
-        GameManager.instance.StartNewLevel();
-    }
-
-    public void BtnRetryLevel()
-    {
-        ShowHideLevelFailedUi(false);
-        Init();
-        GameManager.instance.RestartLevel();
-    }
-
+  
 
     
 

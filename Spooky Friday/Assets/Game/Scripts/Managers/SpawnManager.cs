@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -10,6 +11,12 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     [SerializeField] private Transform respawnPoint;
 
     [SerializeField] private Material checkPointMaterial;
+
+    private void Start()
+    {
+        RespawnPlayer();
+    }
+
     [ContextMenu("Player Respawn")]
     public void RespawnPlayer()
     { 

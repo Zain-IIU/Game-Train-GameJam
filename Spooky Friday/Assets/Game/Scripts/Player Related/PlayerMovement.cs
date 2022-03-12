@@ -39,11 +39,6 @@ public class PlayerMovement : MonoBehaviour
         GatherInput(isJoystick);
         Look();
         Animate();
-        if (Input.GetMouseButtonDown(1) && !isDead)
-        {
-            DestroyPlayer();
-        }
-            
     }
 
     private void FixedUpdate()
@@ -100,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator SpawnNewPlayer()
     {
         yield return new WaitForSeconds(1.5f);
-        transform.DOScale(Vector3.zero, 0.15f);
+       // transform.DOScale(Vector3.zero, 0.15f);
         _spawnManager.RespawnPlayer();
     }
 }

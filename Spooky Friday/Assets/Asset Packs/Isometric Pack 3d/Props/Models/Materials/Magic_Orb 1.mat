@@ -60,9 +60,9 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Fresnel: 0.78
+    - _Fresnel: 0.7
     - _Glossiness: 0.5
-    - _GlowPower: 0.563
+    - _GlowPower: 0.83
     - _Invert: 0
     - _Metallic: 0
     - _Mode: 0
@@ -76,4 +76,4 @@ Material:
     - _BaseColor: {r: 0, g: 0.42068958, b: 1, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GlowColor: {r: 0.3014706, g: 0.56643, b: 1, a: 1}
+    - _GlowColor: {r: 0.56136525, g: 0.6590007, b: 0.8207547, a: 1}
