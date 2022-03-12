@@ -82,7 +82,7 @@ MonoBehaviour:
   timeToShoot: 2
   arrowPoint: {fileID: 8081763065646475868}
   shootPoint: {fileID: 8081763065213563638}
-  arrowPower: 3
+  arrowPower: 2
 --- !u!1 &8081763065646475869
 GameObject:
   m_ObjectHideFlags: 0

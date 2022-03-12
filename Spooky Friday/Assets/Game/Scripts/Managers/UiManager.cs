@@ -23,7 +23,7 @@ public class UiManager : MonoSingleton<UiManager>
         fadeImage.DOScale(Vector2.one * 30f, fadeDuration).SetEase(Ease.OutSine).OnComplete(() =>
         {
             //Load the next level
-            SceneManager.LoadScene("Testing");
+            SceneManager.LoadScene("Level 1");
         });
     }
   

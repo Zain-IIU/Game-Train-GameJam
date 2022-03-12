@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         CameraManager.instance.UpdateTarget(this.transform);
         DialogueManager.instance.SetPanels(textBox,dBox);
+        ParticlesManager.instance.PlayRespawnVFX(this.transform);
     }
 
     private void Update()

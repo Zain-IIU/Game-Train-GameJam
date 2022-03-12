@@ -1,15 +1,17 @@
 ﻿using System;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CollisionDetection : MonoBehaviour
 {
     [SerializeField] private PlayerMovement player;
-    
+     [SerializeField] private ParticlesManager particlesManager;
     
     private void Start()
     {
         player = GetComponent<PlayerMovement>();
+        particlesManager = ParticlesManager.instance;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -17,6 +19,7 @@ public class CollisionDetection : MonoBehaviour
         if (other.gameObject.CompareTag("SoulPoint"))
         {
             other.enabled = false;
+            particlesManager.PlaySoulPointVFX(other.transform);
             SpawnManager.instance.UpdateSpawnPoint(other.transform);
         }
         

@@ -12,6 +12,7 @@ public  class Trigger : MonoBehaviour
     [Multiline] [SerializeField] private string message;
     private DialogueManager _dialogueManager;
 
+    [SerializeField] private bool closeOnEnter;
     private void Start()
     {
         _dialogueManager = DialogueManager.instance;
@@ -22,6 +23,8 @@ public  class Trigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             DoAction(true);
+            if(closeOnEnter) 
+                this.GetComponent<Collider>().enabled = false;
         }
     }
 
@@ -42,6 +45,7 @@ public  class Trigger : MonoBehaviour
                 _dialogueManager.ShowDialogue(message,toShow);
                 break;
             case Triggers.Gate:
+                
                 break;
             case Triggers.Naration:
                 break;
