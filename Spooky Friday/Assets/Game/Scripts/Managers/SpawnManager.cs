@@ -25,6 +25,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     public void UpdateSpawnPoint(Transform newPoint)
     {
+        AudioManager.instance.Play("SoulPoint");
         respawnPoint = newPoint;
         newPoint.GetChild(0).GetComponent<MeshRenderer>().material = checkPointMaterial;
     }

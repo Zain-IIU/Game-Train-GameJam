@@ -180,10 +180,10 @@ RectTransform:
   m_Father: {fileID: 2006122410}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0.15}
+  m_SizeDelta: {x: -0.5612011, y: -0.8605106}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1598627884
 CanvasRenderer:
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Help!!
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4995422ffdb954b70a642f73eb1442ea, type: 2}
   m_sharedMaterial: {fileID: 2517202264660172603, guid: 4995422ffdb954b70a642f73eb1442ea,
@@ -240,8 +240,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.75
-  m_fontSizeBase: 0.75
+  m_fontSize: 0.5
+  m_fontSizeBase: 0.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -315,10 +315,10 @@ RectTransform:
   m_Father: {fileID: 643089750}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.19500001, y: 0}
+  m_AnchorMax: {x: 0.8022431, y: 1}
+  m_AnchoredPosition: {x: 0.0088095665, y: 0}
+  m_SizeDelta: {x: -0.05416429, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2006122412
 CanvasRenderer:
@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 4080688492389830872}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -426,6 +426,8 @@ MonoBehaviour:
   animator: {fileID: 8777236086250583789}
   isJoystick: 1
   useSkewedInput: 0
+  textBox: {fileID: 1598627883}
+  dBox: {fileID: 643089750}
   joystick: {fileID: 0}
 --- !u!54 &8777236085666611958
 Rigidbody:
@@ -610,10 +612,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 400132, guid: 5108a7df5817a5a42a6b0c8a811fb5dd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 5108a7df5817a5a42a6b0c8a811fb5dd, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 4f718470f2898e64398758e72bdd9861, type: 2}
+    - target: {fileID: 13700000, guid: 5108a7df5817a5a42a6b0c8a811fb5dd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a9c0b079edb204945a70bed1c3eea73c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5108a7df5817a5a42a6b0c8a811fb5dd, type: 3}
 --- !u!4 &8777236086240991501 stripped

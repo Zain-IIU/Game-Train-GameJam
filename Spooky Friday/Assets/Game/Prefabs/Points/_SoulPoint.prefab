@@ -93,10 +93,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimationType: 0
-  target: {x: 0, y: 1.25, z: 0}
+  target: {x: 0, y: 1.8, z: 0}
   float1: 0
   color1: {r: 0, g: 0, b: 0, a: 0}
-  duration: 2
+  duration: 1.5
   jumpPower: 2
   easeType: 4
   isToFrom: 0
@@ -121,7 +121,7 @@ GameObject:
   m_TagString: SoulPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &410474014475798233
 Transform:
@@ -130,7 +130,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410474014476034727}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9, y: 0.375, z: 12.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

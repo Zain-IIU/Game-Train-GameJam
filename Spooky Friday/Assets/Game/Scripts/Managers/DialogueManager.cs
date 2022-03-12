@@ -4,26 +4,40 @@ using TMPro;
 using UnityEngine.Serialization;
 
 public class DialogueManager : MonoSingleton<DialogueManager>
-{
-    [SerializeField] private TextMeshProUGUI dialogueToDisplay;
+{ 
+    private TextMeshProUGUI dialogueToDisplay;
 
-    [SerializeField] private RectTransform dialogueBox;
+    private RectTransform dialogueBox;
 
     [SerializeField] private float easeTime;
     [SerializeField] private Ease easeType;
 
-    // Start is called before the first frame update
-    void Start()
+  
+
+    public void ShowDialogue(string textToShow,bool toShow)
     {
+        if (toShow)
+        {
+            dialogueBox.DOScale(Vector3.one, easeTime).SetEase(easeType).OnComplete(()=>
+            {
+                dialogueToDisplay.text = textToShow;
+            });
+        }
+        else
+        {
+            dialogueBox.DOScale(Vector3.zero, easeTime).SetEase(easeType).OnComplete(()=>
+            {
+                dialogueToDisplay.text = "";
+            });
+        }
         
+       
     }
 
-    public void ShowDialogue(string textToShow)
+    public void SetPanels(TextMeshProUGUI textBox, RectTransform dBox)
     {
-        dialogueBox.DOScale(Vector3.one, easeTime).SetEase(easeType).OnComplete(()=>
-        {
-            dialogueToDisplay.text = textToShow;
-        });
+        dialogueToDisplay = textBox;
+        dialogueBox = dBox;
     }
 
 }

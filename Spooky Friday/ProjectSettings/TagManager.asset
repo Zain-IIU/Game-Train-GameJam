@@ -13,6 +13,7 @@ TagManager:
   - Obstacle_Pit
   - Obstacle_Fog
   - Arrow
+  - dialogueBox
   layers:
   - Default
   - TransparentFX

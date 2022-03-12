@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -16,25 +17,29 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool isJoystick;
     [SerializeField] private bool useSkewedInput;
 
+    [SerializeField] private TextMeshProUGUI textBox;
+    [SerializeField] private RectTransform dBox;
     [SerializeField] private FixedJoystick joystick;
     private SpawnManager _spawnManager;
     private bool isDead;
+    private bool isTalking;
     private void Awake()
     {
         joystick = GameObject.FindObjectOfType<FixedJoystick>();
         _spawnManager = SpawnManager.instance;
         isDead = false;
-
+        isTalking = false;
     }
 
     private void Start()
     {
         CameraManager.instance.UpdateTarget(this.transform);
+        DialogueManager.instance.SetPanels(textBox,dBox);
     }
 
     private void Update()
     {
-        if(isDead) return;
+        if(isDead || isTalking) return;
         
         GatherInput(isJoystick);
         Look();
@@ -43,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(isDead)  return;
+        if(isDead || isTalking)  return;
         Move();
     }
 
@@ -89,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetTrigger(IsDead);
         rb.isKinematic = true;
         GetComponent<Collider>().enabled = false;
+        DialogueManager.instance.ShowDialogue(" ",false);
         StartCoroutine(nameof(SpawnNewPlayer));
     }
 
@@ -98,4 +104,6 @@ public class PlayerMovement : MonoBehaviour
        // transform.DOScale(Vector3.zero, 0.15f);
         _spawnManager.RespawnPlayer();
     }
+
+    public void SetDialogue(bool val) => isTalking = val;
 }

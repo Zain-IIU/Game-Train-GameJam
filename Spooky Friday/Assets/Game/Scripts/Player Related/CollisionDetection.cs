@@ -5,19 +5,18 @@ using UnityEngine;
 public class CollisionDetection : MonoBehaviour
 {
     [SerializeField] private PlayerMovement player;
-    [SerializeField] private AudioManager audioManager;
+    
     
     private void Start()
     {
-        audioManager=AudioManager.instance;
         player = GetComponent<PlayerMovement>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("SoulPoint"))
-        {   
-            audioManager.Play("SoulPoint");
+        {
+            other.enabled = false;
             SpawnManager.instance.UpdateSpawnPoint(other.transform);
         }
         
