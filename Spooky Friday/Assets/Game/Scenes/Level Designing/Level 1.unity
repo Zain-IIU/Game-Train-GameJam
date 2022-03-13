@@ -1169,6 +1169,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3580088449835705362, guid: 99e06c52c0f22ee46b10d6bbd18bb4c6,
+        type: 3}
+      propertyPath: _freeLook
+      value: 
+      objectReference: {fileID: 1698701480}
+    - target: {fileID: 3580088450848120684, guid: 99e06c52c0f22ee46b10d6bbd18bb4c6,
+        type: 3}
+      propertyPath: respawnPoint
+      value: 
+      objectReference: {fileID: 845712253}
     - target: {fileID: 3580088451489944868, guid: 99e06c52c0f22ee46b10d6bbd18bb4c6,
         type: 3}
       propertyPath: m_RootOrder

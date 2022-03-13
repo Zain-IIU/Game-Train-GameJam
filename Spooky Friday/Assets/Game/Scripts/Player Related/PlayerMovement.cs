@@ -93,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isDead = true;
         animator.SetTrigger(IsDead);
+        ParticlesManager.instance.PlayDeathVFX(this.transform);
         rb.isKinematic = true;
         GetComponent<Collider>().isTrigger = true;
         DialogueManager.instance.ShowDialogue(" ",false);

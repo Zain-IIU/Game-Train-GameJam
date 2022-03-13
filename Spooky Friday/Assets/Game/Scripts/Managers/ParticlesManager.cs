@@ -5,6 +5,7 @@ public class ParticlesManager : MonoSingleton<ParticlesManager>
 {
     [SerializeField] private GameObject soulPointVFX;
     [SerializeField] private GameObject respawnVFX;
+    [SerializeField] private GameObject deathVFX;
 
     public void PlaySoulPointVFX(Transform posToPlay)
     {
@@ -19,6 +20,14 @@ public class ParticlesManager : MonoSingleton<ParticlesManager>
         respawnVFX.transform.DOMove(posToPlay.position,0f).OnComplete(() =>
         {
             respawnVFX.SetActive(true);    
+        });
+        
+    }
+    public void PlayDeathVFX(Transform posToPlay)
+    {
+        deathVFX.transform.DOMove(posToPlay.position,0f).OnComplete(() =>
+        {
+            deathVFX.SetActive(true);    
         });
         
     }
