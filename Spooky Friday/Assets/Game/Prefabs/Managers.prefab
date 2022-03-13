@@ -52973,6 +52973,11 @@ MonoBehaviour:
     volum: 1
     pitch: 0
     loop: 0
+  - name: Button
+    clip: {fileID: 8300000, guid: 027480c3ca60ead4cbd11b017f730fad, type: 3}
+    volum: 1
+    pitch: 0
+    loop: 0
   Source: {fileID: 3580088449423880257}
   volumeforRandomSfx: 0
 --- !u!82 &3580088449423880257
@@ -52985,7 +52990,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 027480c3ca60ead4cbd11b017f730fad, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

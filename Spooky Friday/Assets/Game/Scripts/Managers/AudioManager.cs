@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -27,8 +28,6 @@ public class AudioManager : MonoBehaviour
   
     public void Play(string sound)
     {
-        Debug.Log("Audio of name  " + sound + " is played");
-        
         Sounds s = Array.Find(sounds, item => item.name == sound);
 
         Source.loop = s.loop;
@@ -36,9 +35,8 @@ public class AudioManager : MonoBehaviour
         Source.volume = s.volum;
         Source.pitch = s.pitch;
         Source.Play();
-        
     }
-    public void Play(string sound1,string sound2,bool playConsecutive)
+    public void Play(string sound1,string sound2)
     {
         Sounds s1 = Array.Find(sounds, item => item.name == sound1);
         
@@ -67,12 +65,10 @@ public class AudioManager : MonoBehaviour
         Source.PlayOneShot(clip[Random.Range(0, clip.Length)]);
     }
 
-    public void PlaySoundWithAudioSource(AudioSource audioSource, AudioClip audioClip,bool play)
+    public void PlaySoundWithAudioSource(AudioSource audioSource, AudioClip audioClip)
     {
-        if (play)
-            audioSource.PlayOneShot(audioClip);
-        else
-            audioSource.Stop();
+        audioSource.clip = audioClip;
+        audioSource.Play();
     }
 
     public void PlayRandomSoundWithAudioSource(AudioSource audioSource, AudioClip[] clips)

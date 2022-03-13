@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: a8d0114ccb01c63478008862ee84735a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Monsterize
+  fontNames:
+  - Monsterize
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b6f7fbb1910ed8e4fb2857330ee8bf45, type: 3}
+  - {fileID: 12800000, guid: e21db089f91d6224eaea42b925d0b02a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

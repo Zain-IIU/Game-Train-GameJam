@@ -4,14 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoSingleton<LevelManager>
 {
+    [SerializeField] private string sceneToLoad;
     public void LoadNextLevel()
     {
-        int nextLevelIndex = SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCount - 1
-            ? 0
-            : SceneManager.GetActiveScene().buildIndex + 1;
-
-        Debug.Log("Loading scene at index "+nextLevelIndex);
-        SceneManager.LoadScene(nextLevelIndex);
+        SceneManager.LoadScene(sceneToLoad);
     }
     
     public void RestartLevel()
