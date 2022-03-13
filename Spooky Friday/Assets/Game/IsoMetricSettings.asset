@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IsoMetricSettings
   m_EditorClassIdentifier: 
   VignetteEnabled: 1
-  VignettePower: 0.28
+  VignettePower: 0.94
   VignetteCenter: {x: 0, y: 0}
   BlurEnabled: 0
   BlurRadius: 0
@@ -22,7 +22,7 @@ MonoBehaviour:
   ColorGradingEnabled: 1
   ToneMappingEnabled: 1
   Gamma: 0.9
-  Exposure: 1.9
+  Exposure: 2
   LUTEnabled: 0
   LUT: {fileID: 0}
   LUTIntensity: 0
@@ -39,5 +39,5 @@ MonoBehaviour:
   FilterTextureResolutionDivider: 1
   BloomIntensity: 0.5
   BloomThreshold: 0
-  BloomSoftThreshold: 0
+  BloomSoftThreshold: 1.5
   BloomDebugView: 0

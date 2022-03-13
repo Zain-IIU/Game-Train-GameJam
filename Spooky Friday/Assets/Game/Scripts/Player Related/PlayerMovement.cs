@@ -94,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
         isDead = true;
         animator.SetTrigger(IsDead);
         rb.isKinematic = true;
-        GetComponent<Collider>().enabled = false;
+        GetComponent<Collider>().isTrigger = true;
         DialogueManager.instance.ShowDialogue(" ",false);
         StartCoroutine(nameof(SpawnNewPlayer));
     }
@@ -107,4 +107,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void SetDialogue(bool val) => isTalking = val;
+
+    public bool PlayerDead()
+    {
+        return isDead;
+    }
 }

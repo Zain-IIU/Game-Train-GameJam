@@ -16,7 +16,7 @@ public class CollisionDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("SoulPoint"))
+        if (other.gameObject.CompareTag("SoulPoint") && !player.PlayerDead())
         {
             other.enabled = false;
             particlesManager.PlaySoulPointVFX(other.transform);
@@ -42,14 +42,19 @@ public class CollisionDetection : MonoBehaviour
             player.DestroyPlayer();
         }
 
-        if (other.gameObject.CompareTag("Finish"))
+        if (other.gameObject.CompareTag("Finish")&& !player.PlayerDead())
         {
             UiManager.instance.EndFade();
         }
 
-        if (other.gameObject.CompareTag("Arrow"))
+        if (other.gameObject.CompareTag("Arrow") && !player.PlayerDead())
         {
             Destroy(other.gameObject);
+            player.DestroyPlayer();
+        }
+
+        if (other.gameObject.CompareTag("Kill")&& !player.PlayerDead() )
+        {
             player.DestroyPlayer();
         }
     }

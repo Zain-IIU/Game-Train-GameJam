@@ -14,6 +14,8 @@ TagManager:
   - Obstacle_Fog
   - Arrow
   - dialogueBox
+  - button
+  - Kill
   layers:
   - Default
   - TransparentFX

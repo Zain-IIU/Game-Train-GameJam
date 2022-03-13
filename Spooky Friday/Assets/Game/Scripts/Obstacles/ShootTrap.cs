@@ -9,6 +9,7 @@ public class ShootTrap : MonoBehaviour
     [SerializeField] private Transform arrowPoint;
     [SerializeField] private Transform shootPoint;
     [SerializeField] private float arrowPower;
+    
     private void Start()
     {
        InvokeRepeating(nameof(ShootArrow),1,timeToShoot);

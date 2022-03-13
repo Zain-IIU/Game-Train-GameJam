@@ -346,7 +346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &129632632
 Transform:
   m_ObjectHideFlags: 0
@@ -388,7 +388,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerType: 0
   message: I Can't See Anything !
+  connectedGate: {fileID: 0}
+  button: {fileID: 0}
   closeOnEnter: 0
+  closeOnExit: 0
 --- !u!1 &184476571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,7 +1522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1121478600
 Transform:
   m_ObjectHideFlags: 0
@@ -1733,7 +1736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1288833746}
   m_Layer: 0
-  m_Name: TriggerForDialogue
+  m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1773,7 +1776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1344395030
 Transform:
   m_ObjectHideFlags: 0
@@ -1815,7 +1818,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerType: 0
   message: What is this Thing !!
+  connectedGate: {fileID: 0}
+  button: {fileID: 0}
   closeOnEnter: 0
+  closeOnExit: 0
 --- !u!1001 &1353230676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32167,6 +32173,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955443449902389308, guid: 41de749687ff5aa43ad45d90be533ff5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41de749687ff5aa43ad45d90be533ff5, type: 3}

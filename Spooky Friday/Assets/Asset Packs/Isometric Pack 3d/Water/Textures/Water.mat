@@ -102,7 +102,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Emission: 0
-    - _Gloss: 0.463
+    - _Gloss: 1
     - _Glossiness: 0.5
     - _Metallic: 0
     - _Mode: 0
@@ -113,7 +113,7 @@ Material:
     - _Specular: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WaveScale: 0.469
+    - _WaveScale: 0.6
     - _ZWrite: 1
     - _node_2226: 0
     - _node_4163: 0
@@ -122,7 +122,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.19117647, g: 0.19117647, b: 0.19117647, a: 1}
     - _Boobles: {r: 0, g: 0.41318446, b: 0.61764705, a: 1}
-    - _Color: {r: 0, g: 0.33189642, b: 0.5661765, a: 1}
+    - _Color: {r: 0, g: 0.5921569, b: 1, a: 1}
     - _Color1: {r: 0.4411765, g: 0.2099391, b: 0, a: 1}
     - _Color2: {r: 0.9568627, g: 0.8509804, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
