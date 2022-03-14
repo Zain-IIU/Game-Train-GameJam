@@ -16,6 +16,7 @@ TagManager:
   - dialogueBox
   - button
   - Kill
+  - closeUp
   layers:
   - Default
   - TransparentFX

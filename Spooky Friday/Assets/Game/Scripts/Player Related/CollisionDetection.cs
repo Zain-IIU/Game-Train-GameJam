@@ -65,7 +65,18 @@ public class CollisionDetection : MonoBehaviour
             AudioManager.instance.PlaySoundWithAudioSource(source,clips[1]);
             player.DestroyPlayer();
         }
+
+        if (other.gameObject.CompareTag("closeUp"))
+        {
+            CameraManager.instance.ZoomCamera(20f);
+        }
     }
 
-   
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("closeUp"))
+        {
+            CameraManager.instance.ZoomCamera(10f);
+        }
+    }
 }

@@ -462,8 +462,8 @@ MonoBehaviour:
   particlesManager: {fileID: 0}
   source: {fileID: 221338131}
   clips:
-  - {fileID: 8300000, guid: 027480c3ca60ead4cbd11b017f730fad, type: 3}
-  - {fileID: 8300000, guid: 3ae93e679e37bde429082b84e55427e4, type: 3}
+  - {fileID: 8300000, guid: f33fdbf03db9a6b4b8f9cfa27efc2ea8, type: 3}
+  - {fileID: 8300000, guid: 427dc0e6638776143bc58a0f93015b67, type: 3}
   - {fileID: 8300000, guid: 459a8643d63f11549bb218732a42fdf8, type: 3}
 --- !u!114 &4080688492389830872
 MonoBehaviour:

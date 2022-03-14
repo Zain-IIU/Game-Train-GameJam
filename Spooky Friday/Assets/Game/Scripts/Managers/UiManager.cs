@@ -7,14 +7,17 @@ using UnityEngine.SceneManagement;
 
 public class UiManager : MonoSingleton<UiManager>
 {
-    [SerializeField] GameObject gameTitle;
-    [SerializeField] GameObject[] panelLevelComplete;
-    [SerializeField] GameObject[] panelFailed;
-
     [SerializeField] private RectTransform fadeImage;
     [SerializeField] private float fadeDuration;
+
+    [SerializeField] private bool showGuide;
+    [SerializeField] private RectTransform tutorialPanel;
+    public  bool gameStarted;
     private void Start()
     {
+        gameStarted = !showGuide;
+        if (showGuide)
+            tutorialPanel.DOScale(Vector2.one, 0.25f);
         fadeImage.DOScale(Vector2.zero, fadeDuration).SetEase(Ease.InSine);
     }
 
@@ -25,6 +28,11 @@ public class UiManager : MonoSingleton<UiManager>
             //Load the next level
             LevelManager.instance.LoadNextLevel();
         });
+    }
+    public void StartFade()
+    {
+        tutorialPanel.DOScale(Vector2.zero, 0.24f);
+        gameStarted = true;
     }
   
 

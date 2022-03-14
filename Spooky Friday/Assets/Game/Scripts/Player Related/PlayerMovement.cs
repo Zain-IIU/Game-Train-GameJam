@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isTalking;
     private void Awake()
     {
-        joystick = GameObject.FindObjectOfType<FixedJoystick>();
+        
         _spawnManager = SpawnManager.instance;
         isDead = false;
         isTalking = false;
@@ -33,6 +33,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        joystick = GameObject.FindObjectOfType<FixedJoystick>();
+        
+        if(PlayerPrefs.HasKey("isMouse"))
+         isJoystick = PlayerPrefs.GetInt("isMouse") != 0;
+
+        if (!isJoystick)
+            joystick.transform.DOScale(Vector2.zero, 0);
         CameraManager.instance.UpdateTarget(this.transform);
         DialogueManager.instance.SetPanels(textBox,dBox);
         ParticlesManager.instance.PlayRespawnVFX(this.transform);
@@ -40,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(isDead || isTalking) return;
+        if(isDead || !UiManager.instance.gameStarted) return;
         
         GatherInput(isJoystick);
         Look();
@@ -49,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(isDead || isTalking)  return;
+        if(isDead || !UiManager.instance.gameStarted)  return;
         Move();
     }
 
@@ -81,10 +88,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Animate()
     {
-        if ((joystick.Horizontal == 0 && joystick.Vertical == 0))
-            ismove = false;
+        if (isJoystick)
+        {
+            if ((joystick.Horizontal == 0 && joystick.Vertical == 0))
+                ismove = false;
+            else
+                ismove = true;
+        }
         else
-            ismove = true;
+        {
+            if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
+                ismove = false;
+            else
+                ismove = true;
+        }
+        
         
         animator.SetBool(Movehash,ismove);
     }
@@ -96,6 +114,7 @@ public class PlayerMovement : MonoBehaviour
         ParticlesManager.instance.PlayDeathVFX(this.transform);
         rb.isKinematic = true;
         GetComponent<Collider>().isTrigger = true;
+        CameraManager.instance.ZoomCamera(10f);
         DialogueManager.instance.ShowDialogue(" ",false);
         StartCoroutine(nameof(SpawnNewPlayer));
     }
