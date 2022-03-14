@@ -104,16 +104,16 @@ Material:
     - _Emission: 0
     - _Gloss: 1
     - _Glossiness: 0.5
-    - _Metallic: 0
+    - _Metallic: 1
     - _Mode: 0
-    - _NormalPower: 0.353
+    - _NormalPower: 0.6
     - _OcclusionStrength: 1
     - _Opacity: 0.676
     - _Parallax: 0.02
     - _Specular: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WaveScale: 0.6
+    - _WaveScale: 0.79
     - _ZWrite: 1
     - _node_2226: 0
     - _node_4163: 0

@@ -23,16 +23,22 @@ public class PlayerMovement : MonoBehaviour
     private SpawnManager _spawnManager;
     private bool isDead;
     private bool isTalking;
+
+    private Boss boss;
     private void Awake()
     {
         CameraManager.instance.UpdateTarget(this.transform);
         _spawnManager = SpawnManager.instance;
         isDead = false;
         isTalking = false;
+        
     }
 
     private void Start()
     {
+        boss=Boss.Instance;
+        if(boss)
+            boss.UpdateTarget(this.transform);
         joystick = GameObject.FindObjectOfType<FixedJoystick>();
         
         if(PlayerPrefs.HasKey("isMouse"))
