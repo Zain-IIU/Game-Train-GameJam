@@ -21,6 +21,7 @@ public class LevelManager : MonoBehaviour
     
     public void RestartLevel()
     {
+        AudioManager.instance.Play("Press");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

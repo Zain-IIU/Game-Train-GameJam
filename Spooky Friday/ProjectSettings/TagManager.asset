@@ -18,6 +18,7 @@ TagManager:
   - Kill
   - closeUp
   - box
+  - scroll
   layers:
   - Default
   - TransparentFX

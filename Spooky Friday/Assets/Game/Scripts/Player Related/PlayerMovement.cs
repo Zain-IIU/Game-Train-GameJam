@@ -133,6 +133,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void SetDialogue(bool val) => isTalking = val;
+    public void SetDead(bool val) => isDead = val;
 
     public bool PlayerDead()
     {

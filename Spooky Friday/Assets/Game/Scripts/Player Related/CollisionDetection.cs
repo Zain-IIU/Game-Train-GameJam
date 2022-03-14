@@ -7,6 +7,7 @@ public class CollisionDetection : MonoBehaviour
 {
     [SerializeField] private PlayerMovement player;
      [SerializeField] private ParticlesManager particlesManager;
+
      private void Start()
     {
         player = GetComponent<PlayerMovement>();
@@ -67,6 +68,11 @@ public class CollisionDetection : MonoBehaviour
         if (other.gameObject.CompareTag("closeUp"))
         {
             CameraManager.instance.ZoomCamera(20f);
+        }
+        if(other.gameObject.CompareTag("scroll"))
+        {
+            other.enabled = false;
+            UiManager.instance.ShowEndCredits();
         }
     }
 
