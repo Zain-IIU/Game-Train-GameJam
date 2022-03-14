@@ -16,6 +16,10 @@ public  class Trigger : MonoBehaviour
 
     [SerializeField] private Vector2 minMaxButton;
     [SerializeField] private Vector2 minMaxDoor;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip gateOpen;
+
+    [SerializeField] private bool withBox;
     private void Start()
     {
         _dialogueManager = DialogueManager.instance;
@@ -23,17 +27,26 @@ public  class Trigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("box"))
         {
             DoAction(true);
             if(closeOnEnter) 
                 this.GetComponent<Collider>().enabled = false;
+
+            if (other.gameObject.CompareTag("box"))
+                withBox = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (withBox && other.gameObject.CompareTag("box"))
+        {
+            DoAction(false);
+            if(closeOnExit)
+                this.GetComponent<Collider>().enabled = false;
+        }
+        if (other.gameObject.CompareTag("Player") && !withBox)
         {
             DoAction(false);
             if(closeOnExit)
@@ -50,6 +63,7 @@ public  class Trigger : MonoBehaviour
                 break;
             case Triggers.Gate:
                 GateAction(toShow);
+                AudioManager.instance.PlaySoundWithAudioSource(source,gateOpen);
                 break;
             case Triggers.Naration:
                 break;

@@ -53552,14 +53552,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: SoulPoint
-    clip: {fileID: 8300000, guid: 027480c3ca60ead4cbd11b017f730fad, type: 3}
+    clip: {fileID: 8300000, guid: f33fdbf03db9a6b4b8f9cfa27efc2ea8, type: 3}
     volum: 1
-    pitch: 0
+    pitch: 1
     loop: 0
-  - name: Button
-    clip: {fileID: 8300000, guid: 027480c3ca60ead4cbd11b017f730fad, type: 3}
+  - name: death
+    clip: {fileID: 8300000, guid: 427dc0e6638776143bc58a0f93015b67, type: 3}
     volum: 1
-    pitch: 0
+    pitch: 1
+    loop: 0
+  - name: death_fire
+    clip: {fileID: 8300000, guid: ec6bd7ab30e638d409b71cb4d3f771f1, type: 3}
+    volum: 0.5
+    pitch: 1
+    loop: 0
+  - name: finish
+    clip: {fileID: 8300000, guid: 459a8643d63f11549bb218732a42fdf8, type: 3}
+    volum: 1
+    pitch: 1
+    loop: 0
+  - name: death_spike
+    clip: {fileID: 8300000, guid: 3ae93e679e37bde429082b84e55427e4, type: 3}
+    volum: 1
+    pitch: 1
+    loop: 0
+  - name: Press
+    clip: {fileID: 8300000, guid: dc682e1f543c77847b62a1aceb8e0a0f, type: 3}
+    volum: 1
+    pitch: 1
     loop: 0
   Source: {fileID: 3580088449423880257}
   volumeforRandomSfx: 0
@@ -53966,7 +53986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c1ce2ba11b23f4ba290d0c41e76cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Level 2
+  sceneToLoad: Level 3
 --- !u!1 &3580088451489944869
 GameObject:
   m_ObjectHideFlags: 0

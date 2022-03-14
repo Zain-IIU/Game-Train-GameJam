@@ -15,14 +15,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private float volumeforRandomSfx;
     void Awake()
     {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-        }
+        instance = this;
     }
 
   

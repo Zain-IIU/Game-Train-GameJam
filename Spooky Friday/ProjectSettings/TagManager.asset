@@ -17,6 +17,7 @@ TagManager:
   - button
   - Kill
   - closeUp
+  - box
   layers:
   - Default
   - TransparentFX

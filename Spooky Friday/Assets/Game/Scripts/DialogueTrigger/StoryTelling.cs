@@ -1,7 +1,7 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class StoryTelling : MonoBehaviour
 {
@@ -22,6 +22,8 @@ public class StoryTelling : MonoBehaviour
     [SerializeField] private AudioClip[] clips;
 
     [SerializeField] private RectTransform inputCheck;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +56,7 @@ public class StoryTelling : MonoBehaviour
     }
     public void UpdateText()
     {
+        AudioManager.instance.Play("Press");
         AudioManager.instance.PlaySoundWithAudioSource(source,clips[curTextIndex]);
         buttons.DOScaleY(0, 0.5f);
         if (curTextIndex == scripts.Length - 1)
@@ -74,12 +77,12 @@ public class StoryTelling : MonoBehaviour
 
     public void SelectInputType(bool isMouse)
     {
+        AudioManager.instance.Play("Press");
         inputCheck.DOScale(Vector2.zero, 0.24f).OnComplete(() =>
         {
             StartNaration();
             UpdateText();
         });
-
         PlayerPrefs.SetInt("isMouse", isMouse ? 1 : 0);
     }
 

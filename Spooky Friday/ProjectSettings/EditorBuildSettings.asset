@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Game/Scenes/Level Designing/Story Introduction.unity
+    path: Assets/Game/Scenes/Level Designing/Intro.unity
     guid: 9f86bce921605624a96e8b52c1156cd4
   - enabled: 1
     path: Assets/Game/Scenes/Level Designing/Level 1.unity
@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Level Designing/Level 2.unity
     guid: 1b5721e2645f3554285a9bbb6ec6e2de
+  - enabled: 1
+    path: Assets/Game/Scenes/Level Designing/Level 3.unity
+    guid: 1f429161781a2874cb23058e7aa7b28b
   m_configObjects: {}

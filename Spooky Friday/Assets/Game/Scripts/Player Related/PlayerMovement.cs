@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isTalking;
     private void Awake()
     {
-        
+        CameraManager.instance.UpdateTarget(this.transform);
         _spawnManager = SpawnManager.instance;
         isDead = false;
         isTalking = false;
@@ -40,9 +40,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (!isJoystick)
             joystick.transform.DOScale(Vector2.zero, 0);
-        CameraManager.instance.UpdateTarget(this.transform);
+        
         DialogueManager.instance.SetPanels(textBox,dBox);
         ParticlesManager.instance.PlayRespawnVFX(this.transform);
+        CameraManager.instance.ZoomCamera(10f);
     }
 
     private void Update()
@@ -114,7 +115,6 @@ public class PlayerMovement : MonoBehaviour
         ParticlesManager.instance.PlayDeathVFX(this.transform);
         rb.isKinematic = true;
         GetComponent<Collider>().isTrigger = true;
-        CameraManager.instance.ZoomCamera(10f);
         DialogueManager.instance.ShowDialogue(" ",false);
         StartCoroutine(nameof(SpawnNewPlayer));
     }
