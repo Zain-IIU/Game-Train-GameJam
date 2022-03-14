@@ -566,7 +566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &889873320
 RectTransform:
   m_ObjectHideFlags: 0
@@ -53573,6 +53573,11 @@ MonoBehaviour:
     loop: 0
   - name: death_spike
     clip: {fileID: 8300000, guid: 3ae93e679e37bde429082b84e55427e4, type: 3}
+    volum: 1
+    pitch: 1
+    loop: 0
+  - name: break
+    clip: {fileID: 8300000, guid: 6aa3a58c8fbbfa44fb0c8ee8dfe51413, type: 3}
     volum: 1
     pitch: 1
     loop: 0
