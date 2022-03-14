@@ -51,8 +51,16 @@ public class Boss : MonoBehaviour
         animator.SetTrigger(SeenPlayer);
     }
 
+    public void StopAttack()
+    {
+        isPlayerSeen = false;
+        animator.SetTrigger(NoPlayer);
+    }
+        
     [SerializeField] private float timetoReach;
     [SerializeField] private Ease _ease;
+    private static readonly int NoPlayer = Animator.StringToHash("NoPlayer");
+
     public void SpitVenom()
     {
         GameObject venom = Instantiate(venomPrefab, spawnPos.position, quaternion.identity);

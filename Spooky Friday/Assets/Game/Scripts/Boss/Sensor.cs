@@ -14,4 +14,12 @@ public class Sensor : MonoBehaviour
             boss.StartAttack();
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            boss.StopAttack();
+        }
+    }
 }
