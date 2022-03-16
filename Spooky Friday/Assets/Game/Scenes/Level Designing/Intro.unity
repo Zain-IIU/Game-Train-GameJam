@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.1678835, g: 0.2107358, b: 0.28994045, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2446,9 +2446,9 @@ MonoBehaviour:
   - "It was forbidden to come close or touch the scroll of death as it targets the
     minds of weak and test them if they have what it takes to claim it\u2019s power.
     One of the guards Cleophas encountered the scroll, he could not pass the tests
-    laid by the scroll and was consumed in front of his wife Phobia, contained within
-    the scroll"
-  - The only way to resurrect her husband would be to encounter the scroll, pass
+    laid by the scroll and was consumed in front of his brother Elias, contained
+    within the scroll"
+  - The only way to resurrect his brother would be to encounter the scroll, pass
     all its tests, take it out of the palace and return it to realm of living. It
     has the power of immortality, so anyone touching it will not die unless consumed
     by the scroll in its tests

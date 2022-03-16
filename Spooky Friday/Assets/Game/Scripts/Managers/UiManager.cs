@@ -13,15 +13,43 @@ public class UiManager : MonoSingleton<UiManager>
     [SerializeField] private bool showGuide;
     [SerializeField] private RectTransform tutorialPanel;
     [SerializeField] private CanvasGroup endCredits;
+    [SerializeField] private RectTransform pauseMenu;
+    
     public  bool gameStarted;
+
+    private bool isPauseMenuOpen;
     private void Start()
     {
         gameStarted = !showGuide;
         if (showGuide)
             tutorialPanel.DOScale(Vector2.one, 0.25f);
         fadeImage.DOScale(Vector2.zero, fadeDuration).SetEase(Ease.InSine);
+        GameManager.instance.ONGamePaused += ShowPauseMenu;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            GameManager.instance.OnGamePaused();
+        
+            
+    }
+
+    void ShowPauseMenu()
+    {
+        if (isPauseMenuOpen)
+        {
+            pauseMenu.DOScale(Vector2.zero, 0.24f);
+            CameraManager.instance.ZoomCamera(10f);
+            isPauseMenuOpen = false;
+        }
+        else
+        {
+            pauseMenu.DOScale(Vector2.one, 0.24f);
+            CameraManager.instance.ZoomCamera(20f);
+            isPauseMenuOpen = true;
+        }
+    }
     public void EndFade()
     {
         fadeImage.DOScale(Vector2.one * 30f, fadeDuration).SetEase(Ease.OutSine).OnComplete(() =>

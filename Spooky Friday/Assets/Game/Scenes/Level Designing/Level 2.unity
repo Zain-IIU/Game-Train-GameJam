@@ -22392,6 +22392,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1822022998, guid: 99e06c52c0f22ee46b10d6bbd18bb4c6, type: 3}
+      propertyPath: sceneToLoad
+      value: Level 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3580088449835705362, guid: 99e06c52c0f22ee46b10d6bbd18bb4c6,
         type: 3}
       propertyPath: _freeLook

@@ -1486,10 +1486,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1822022998, guid: 99e06c52c0f22ee46b10d6bbd18bb4c6, type: 3}
-      propertyPath: sceneToLoad
-      value: Level 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3580088449835705362, guid: 99e06c52c0f22ee46b10d6bbd18bb4c6,
         type: 3}
       propertyPath: _freeLook
@@ -1974,25 +1970,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1361065818}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1366573953 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3580088451489944869, guid: 99e06c52c0f22ee46b10d6bbd18bb4c6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1044100822}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1366573954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1366573953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bb8c4eae3c4a2145924b090b7150f5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  output: {x: 1920, y: 1080}
 --- !u!4 &1446582569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2306277637355370199, guid: 6dfb0b3194429bc43ae504a1c867d058,
